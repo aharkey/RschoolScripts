@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1591638668602.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "19|36|62|0|\n81|23|103|9|\n",
+    "hash" : "2372347980",
+    "id" : "7705824D",
+    "lastKnownWriteTime" : 1591642927,
+    "last_content_update" : 1591642927298,
+    "path" : "G:/My Drive/WFU/06 Teaching/RschoolScripts/Lesson 2 - Data frames/Exercise results.R",
+    "project_path" : "Lesson 2 - Data frames/Exercise results.R",
+    "properties" : {
+        "cursorPosition" : "64,0",
+        "scrollLine" : "12",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

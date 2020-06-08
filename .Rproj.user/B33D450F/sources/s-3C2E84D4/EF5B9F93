@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1591642867529.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "EF5B9F93",
+    "lastKnownWriteTime" : 1591196228,
+    "last_content_update" : 1591196228,
+    "path" : "G:/My Drive/WFU/01 Research/07 ETR1 RNA-Seq/GMuday_RNASeq_Pipeline/harkey_scripts/DESeq2analysis_withheatmaps.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "878,0",
+        "scrollLine" : "871"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

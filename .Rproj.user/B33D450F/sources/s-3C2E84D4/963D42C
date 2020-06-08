@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1591381768667.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "765761648",
+    "id" : "963D42C",
+    "lastKnownWriteTime" : 1591642362,
+    "last_content_update" : 1591642362330,
+    "path" : "G:/My Drive/WFU/06 Teaching/RschoolScripts/Lesson 2 - Data frames/Lesson 2 - Data frames.Rmd",
+    "project_path" : "Lesson 2 - Data frames/Lesson 2 - Data frames.Rmd",
+    "properties" : {
+        "cursorPosition" : "263,94",
+        "scrollLine" : "252",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
