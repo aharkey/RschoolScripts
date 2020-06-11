@@ -2,8 +2,7 @@
 ### 6-10-2020
 ### Lesson 2 - Exercise results
 
-# We will collaboratively build this script during the workshop.
-
+# First I have a set up like I usually use in my scripts
 ##### Load packages #####
 library(ComplexHeatmap)
 
@@ -18,10 +17,13 @@ mafile <- "G:/Shared drives/R School/Lesson 2 - Data frames/data/ACC449.csv"
 saveloc <- "G:/Shared drives/R School/Lesson 2 - Data frames/exercise output/"
 
 ##### Set global options - heatmaps #####
-# Color function for heatmaps
-# Set scale
+# These are settings for the heatmap generated at the end
+# I have several heatmaps in my RNA-Seq script, so I put all the settings at the top of the script
+
+# Set scale for text
 txtsize <- 1.5
 
+# Set color scale
 scale <- seq(-2.5, 2.5, 0.01)
 # Generate color function
 colfunc <- colorRampPalette(c("blue", "white", "red"))
@@ -72,33 +74,37 @@ malist <- read.csv(mafile, header = FALSE)
 head(malist)
 
 ##### Part 2 #####
+# Pull out RNA-Seq data for genes also in the 449 (malist)
+rsdat <- rsdat[rownames(rsdat) %in% malist$V1,]
 
 ##### Part 3 #####
+# Sort the results by the allsum column
+rsdat <- rsdat[order(rsdat$allsum),]
 
 ##### Part 4 #####
+# Count things that respond to ethylene, ACC, or both
+rsdat <- rsdat[which(rsdat$eth.sum != "n" | rsdat$acc.sum != "n"),]
+
+table(rsdat$allsum)
 
 ##### Part 5 #####
+# Pull out only the logFC values for making a heatmap and convert to a matrix
+rsdat <- rsdat[,grep("logFC",colnames(rsdat))]
+# I added an additional line to remove the "max" columns
+rsdat <- rsdat[,-grep("max", colnames(rsdat))]
+heatmap(as.matrix(rsdat))
 
 ##### Part 6 - Heatmap #####
+# This is a simplified version of the heatmap I generated for the manuscript using the ComplexHeatmaps package:
 png(paste0(saveloc, "ethylene vs. ACC - results for ACC 449.png"), width = 450, height = 700)
-Heatmap(as.matrix(hormone[-which(hormone$allsum == "U.D" | hormone$allsum == "D.U"),
-                          grep("[1|4].logFC", colnames(hormone))]),
+Heatmap(as.matrix(rsdat),
         name = "logFC",
         cluster_columns = FALSE,
         show_row_names = FALSE,
         show_row_dend = FALSE,
-        row_split = factor(hormone$allsum[-which(hormone$allsum == "U.D" | hormone$allsum == "D.U")],
-                           levels = c("D.D", "D.n", "n.D", "U.U", "U.n", "n.U")),
-        cluster_row_slices = FALSE,
-        gap = unit(5, "mm"),
-        row_title = c("Down in both", "Down in ethylene", "Down in ACC",
-                      "Up in both", "Up in ethylene", "Up in ACC"),
-        row_title_rot = 0,
-        row_title_gp = gpar(cex = txtsize),
         col = colfunc,
         bottom_annotation = anno.treat,
         column_labels = rep("", 6),
-        show_heatmap_legend = FALSE,
         width = unit(4, "in")
 )
 dev.off()

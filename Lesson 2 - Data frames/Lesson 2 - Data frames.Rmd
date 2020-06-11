@@ -127,8 +127,17 @@ The function `read.csv()` can be used to read a .csv file into R as a data frame
 Putting it all together, to read in a .csv file that has both row and column names:
 
 ```{r, eval = FALSE}
-read.csv("C:/Users/Andria/example/outputfolder/output.csv", row.names = 1)
+dat <- read.csv("C:/Users/Andria/example/outputfolder/input.csv", row.names = 1)
 ```
+
+# **Writing data to a file**
+
+Writing a CSV file from a data frame is very similar, and very simple, using the `read.csv()` function:
+
+```{r, eval = FALSE}
+write.csv(dat, "C:/Users/Andria/example/outputfolder/output.csv")
+```
+
 
 # **Accessing parts of a data frame**
 
@@ -167,7 +176,7 @@ dat[2,1]
 You can enter a range of numbers to be accessed:
 
 ```{r}
-dat[1:2, 2]
+dat[1:5, 3]
 ```
 
 Or put multiple numbers together using `c()`

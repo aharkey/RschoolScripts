@@ -1625,8 +1625,13 @@ outfile &lt;- &quot;C:/Users/Andria/example/file/output.csv&quot;</code></pre>
 <li><code>row.names</code> - this argument can tell R which column contains row names, if the file contains them, as a number (usually <code>1</code>). You could fix this the long way, but this argument makes it quick and easy.</li>
 </ul>
 <p>Putting it all together, to read in a .csv file that has both row and column names:</p>
-<pre class="r"><code>read.csv(&quot;C:/Users/Andria/example/outputfolder/output.csv&quot;, row.names = 1)</code></pre>
+<pre class="r"><code>dat &lt;- read.csv(&quot;C:/Users/Andria/example/outputfolder/input.csv&quot;, row.names = 1)</code></pre>
 </div>
+</div>
+<div id="writing-data-to-a-file" class="section level1">
+<h1><strong>Writing data to a file</strong></h1>
+<p>Writing a CSV file from a data frame is very similar, and very simple, using the <code>read.csv()</code> function:</p>
+<pre class="r"><code>write.csv(dat, &quot;C:/Users/Andria/example/outputfolder/output.csv&quot;)</code></pre>
 </div>
 <div id="accessing-parts-of-a-data-frame" class="section level1">
 <h1><strong>Accessing parts of a data frame</strong></h1>
@@ -1666,8 +1671,8 @@ dat</code></pre>
 <pre class="r"><code>dat[2,1]</code></pre>
 <pre><code>## [1] &quot;chocolate&quot;</code></pre>
 <p>You can enter a range of numbers to be accessed:</p>
-<pre class="r"><code>dat[1:2, 2]</code></pre>
-<pre><code>## [1] FALSE  TRUE</code></pre>
+<pre class="r"><code>dat[1:5, 3]</code></pre>
+<pre><code>## [1] 3 4 1 3 2</code></pre>
 <p>Or put multiple numbers together using <code>c()</code></p>
 <pre class="r"><code>dat[c(1, 3), 1]</code></pre>
 <pre><code>## [1] &quot;vanilla&quot;    &quot;strawberry&quot;</code></pre>
