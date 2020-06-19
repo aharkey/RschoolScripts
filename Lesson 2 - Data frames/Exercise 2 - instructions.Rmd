@@ -1,0 +1,59 @@
+---
+title: "Exercise 2 - Instructions"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+To practice working with data frames, we’re going to use some of the ETR1 RNA-Seq data.
+
+### The data:
+ethylene vs ACC in Col-0 - sig results - with summary columns.csv
+Contains all the genes which responded to ethylene or ACC in Col-0.
+
+We want to compare these results with the results of the ACC 449. I got a list of the ACC-responsive genes here, and saved just the gene names as a CSV file. Note that because some microarray probes have multiple associated gene IDs, there are more than 449 genes here. There are more complicated ways of dealing with this problem, but this will work for practice.
+
+### Part 1 
+We’ll do this together:
+
+* Read in the RNA-Seq file as `rsdat`
+* Read in the microarray list as `malist`
+
+### Part 2 
+[Post results here](http://collabedit.com/eh2m4)
+
+* Pull out the RNA-Seq data for the genes that match the 449 list
+* Did all of the genes in the list have a match? If not, how many didn’t?
+
+### Part 3
+[Post results here](http://collabedit.com/sh56b)
+
+* Sort the results of part 2 (`rsdat`) by the allsum column
+* Save the file to our output folder
+
+### Part 4
+[Post results here](http://collabedit.com/hf3ey)
+
+* Count things that respond to ethylene, ACC, or both using the `allsum` column
+
+### Part 5
+[Post results here](http://collabedit.com/xtcat)
+
+* Pull out only the logFC values and convert to a matrix
+  + Name this data `rsdatht`
+  + We'll use it to make a heatmap in Part 6.
+
+### Part 6
+
+We’ll do this together:
+
+* Make a heatmap of results
+
+### Helpful info
+
+* `rsdat` - RNA-Seq data
+* `malist` - list of microarray genes
+* `saveloc` - folder to save output in
+* `rsheat` - RNA-Seq data for heatmap
+
+* `length()` - tells you the number of entries in a vector

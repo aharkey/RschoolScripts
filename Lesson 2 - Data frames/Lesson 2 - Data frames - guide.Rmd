@@ -1,11 +1,14 @@
 ---
-title: "Lesson 2: Working with data frames"
+title: 'Lesson 2: Working with data frames'
 output:
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
   html_document:
-    toc: true
-    toc_float:
-      collapsed: false
+    toc: yes
     toc_depth: 2
+    toc_float:
+      collapsed: no
 ---
 
 # **What is a data frame?**
@@ -114,7 +117,7 @@ Then, for each file that has to be written, I can generate the complete file nam
 paste0(outsave, "output.csv")
 ```
 
-This saves space and keeps your code looking cleaner, as well as making your life easier when you have to run the same code 7 different times 🙃
+This saves space and keeps your code looking cleaner, as well as making your life easier when you have to run the same code 7 different times.
 
 ## Reading in CSV files
 

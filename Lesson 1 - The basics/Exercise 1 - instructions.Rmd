@@ -1,0 +1,53 @@
+---
+title: "Exercise 1 - Instructions"
+author: "Andria Harkey"
+date: "6/16/2020"
+output: pdf_document
+---
+
+For today’s exercise, we’re going to use some datasets that R has built into it so people can use it for demos, testing, or learning (like this!). These are already saved as variables, so you only have to call their name: e.g. `mtcars`.
+
+To do the exercises, you will need to pull certain columns out of the data frame. All you need to know for today is that you can call a data frame column by putting a dollar sign (`$`) between the data frame name and the column name: `mtcars$mpg`
+
+## Group 1
+
+When you are done, paste code [**here**](http://collabedit.com/cyjju)
+
+`mtcars`  is a data frame of information about cars (MPG, number of gears, etc.) from a 1974 issue of Motor Trend magazine.
+
+* Using the `am` column, which tells which whether the car is automatic (0) or manual (1):
+  + Convert this column into these different data types or structures: character, factor, logical
+  + Do all of these work? Do any of them give an error message?
+  + Try using the function `which()` to get the numbers of the rows for cars which have a manual transmission.
+* Calculate the minimum and maximum MPGs of these cars using `min()` and `max()`. Round the result to 1 decimal place (use the help function if you can’t remember how to do this).
+
+## Group 2
+
+When you are done, paste code [**here**](http://collabedit.com/h92un)
+
+`airquality` is a table of ozone readings and and weather data.
+
+* What class is the `Ozone` column? What happens if you try to convert it to numeric?
+* What class is the `Wind` column? What happens if you try to convert it to integer?
+* Calculate the mean of the `Ozone` column. What is the result?
+  + Is there something in the help document that will tell you how to fix this error?
+  + Can you use the function `na.omit()` to accomplish the same thing?
+* Use the `summary()` function on these columns. What information does it give?  
+
+## Group 3
+
+When you are done, paste code [**here**](http://collabedit.com/r7p4d)
+
+`PlantGrowth` is a table of results of plant growth given 3 treatment groups.
+
+* What class is the `group` column?
+  + Can you convert it to character? numeric?
+  + Can you use the `toupper()` function to make them uppercase?
+
+`iris` is a dataset of flower measurements for several iris species.
+
+* Look at the first six rows using `head()`
+* The `Petal.Width` column looks very repetitive. Let's see how much:
+  + How many entries are in this column? (Hint: `length()`)
+  + Use the `unique()` function to get a vector of the unique values from this column. How many entries are in this vector?
+
