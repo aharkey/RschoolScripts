@@ -7,7 +7,7 @@ setwd("G:/Shared drives/R School/limma/example/")
 ##### Packages #####
 require(GEOquery)
 require(plyr)
-require(Biobase)
+# require(Biobase)
 require(limma)
 
 ##### exprsData #####
@@ -87,14 +87,13 @@ pData <- data.frame(matrix(NA, nrow=6, ncol=2))
 rownames(pData) <- colnames(exprs)
 colnames(pData) <- c("Treatment", "Replicate")
 
-
 pData$Treatment <- c(rep("control", 3), rep("treated", 3))
 pData$Replicate <- c(1, 2, 3, 1, 2, 3)
 
 pData
 
 # Create annotated data frame
-labelDescription <- c("Treatment", "Replicate")
+labelDescription <- colnames(pData)
 annotpData <- new("AnnotatedDataFrame",
                        data = pData,
                        varMetadata = data.frame(labelDescription, colnames(pData)))
