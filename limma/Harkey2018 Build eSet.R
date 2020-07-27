@@ -121,4 +121,5 @@ rm(annotfData, annotpData, eData, exprs)
 ##### Save & read eSet #####
 save(eSet, file="eSet_ACCmicroarray4hr.RData")
 
-eSet <- readExpressionSet("eSet_ACCmicroarray4hr.RData")
+load("eSet_ACCmicroarray4hr.RData")
+head(eSet)
