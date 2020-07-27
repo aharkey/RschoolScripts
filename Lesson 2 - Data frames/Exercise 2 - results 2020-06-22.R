@@ -1,5 +1,5 @@
 ### R School
-### 6-10-2020
+### 6-22-2020
 ### Lesson 2 - Exercise results
 
 # First I have a set up like I usually use in my scripts
@@ -11,7 +11,7 @@ library(ComplexHeatmap)
 rsfile <- "G:/Shared drives/Ethylene RNA Seq experiments/Data - DO NOT EDIT FILES/DESeq2/06 logFC cutoff 0_5/03 Ethylene vs. ACC comparisons/ethylene vs ACC in Col-0 - sig results - with summary columns.csv"
 
 # Location of ACC 449 list
-mafile <- "G:/Shared drives/R School/Lesson 2 - Data frames/data/ACC449.csv"
+mafile <- "G:/Shared drives/R School/Lesson 2 - Data frames/exercise data/ACC449.csv"
 
 # Location to save output of script
 saveloc <- "G:/Shared drives/R School/Lesson 2 - Data frames/exercise output/"
@@ -75,16 +75,35 @@ malist <- read.csv(mafile, header = FALSE)
 head(malist)
 
 ##### Part 2 #####
+genes <- malist$V1
+matches <- rsdat[rownames(rsdat) %in% genes,]
+length(rownames(matches))
+length(rownames(rsdat))-length(rownames(matches))
 
+length(genes) - length(rownames(matches))
 
 ##### Part 3 #####
+ordered_rsdat = matches[order(matches$allsum),]
+write.csv(ordered_rsdat, outsave)
 
+write.csv(ordered_rsdat, paste0(saveloc, "sortedmatches.csv"))
+
+head(ordered_rsdat)
 
 ##### Part 4 #####
+rsdat[which(rsdat$eth.sum != "n" | rsdat$acc.sum != "n"),]
+rsdat[which(rsdat$allsum != "n.n"),]
 
+# OR which(thing1 = 1 | thing2 = 2)
+# AND which(thing1 =2 & thing2 = 2)
+
+responseethylene <- rsdat[which(rsdat$allsum == "U.n" | rsdat$allsum == "U.D" | rsdat$allsum == "U.U")]
+responseacc<- rsdat[which(rsdat$allsum == "D.U" | rsdat$allsum == "U.U" | rsdat$allsum == "n.U")]
 
 ##### Part 5 #####
-
+rsdatht <- rsdat[, grep("logFC", colnames(rsdat))]
+rsdatht <- rsdatht[, -grep("max", colnames(rsdatht))]
+rsdatht <- as.matrix(rsdatht)
 
 ##### Part 6 - Heatmap #####
 # This is a simplified version of the heatmap I generated for the manuscript using the ComplexHeatmaps package:
